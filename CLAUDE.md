@@ -1,0 +1,19 @@
+# Agent notes
+
+This repository is a CLI that turns a screenplay-style `scenario.txt` into a hand-drawn **conversation map**: actors speaking in boxes joined by plain lines, as an Excalidraw file and a self-contained SVG.
+
+If you have been asked to turn a systems diagram, process flow, ecosystem map or service blueprint into one of these, read `docs/conversation-maps.md` first and follow its procedure. The file format is specified in `docs/scenario-format.md`. `examples/clinic-appointment/` is a worked example made from a service blueprint.
+
+Commands:
+
+```
+npm install
+node --import tsx src/cli.ts check examples/<name>
+node --import tsx src/cli.ts build examples/<name> --png
+node --import tsx src/cli.ts pin examples/<name>
+npm run typecheck
+```
+
+Rules of thumb: six to fourteen threads of two to five turns; words short and conversational; at most three cross-thread links; `once` only for a hub with two or three spokes. Warnings about a link passing through a box are for hand finishing, not for you to fix in code.
+
+Design notes are in `BRIEF-v2.md`. There is no graph layout engine on purpose. Use British English in docs and sample content. Do not add arrowheads, titles, legends or colours to the output.

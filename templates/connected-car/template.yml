@@ -1,0 +1,47 @@
+name: connected-car
+voice: Short and plain. Questions get answered in the next turn. Systems speak like helpful people.
+
+icons:
+  building-carpark: icons/building-carpark.svg
+  building-donutshop: icons/building-donutshop.svg
+  building-office: icons/building-office-alt-a.svg
+  car-a: icons/car-alt-a.svg
+  car-b: icons/car-alt-b.svg
+  car-c: icons/car-alt-c.svg
+  car-d: icons/car-alt-d.svg
+  car-e: icons/car-alt-e.svg
+  car-f: icons/car-alt-f.svg
+  person-deskworker-a: icons/personatdesk-alt-a.svg
+  person-with-phone-a: icons/personwithmobile-alt-a.svg
+  person-with-phone-b: icons/personwithmobile-alt-b.svg
+  person-with-phone-c: icons/personwithmobile-alt-c.svg
+  person-with-phone-d: icons/personwithmobile-alt-d.svg
+  person-with-phone-e: icons/personwithmobile-alt-e.svg
+  person-with-phone-f: icons/personwithmobile-alt-f.svg
+  splash: icons/splash.svg
+  taxi: icons/taxi-alt-a.svg
+
+stroke:
+  roughness: 1.2
+  strokeWidth: 2
+  bowing: 1
+  color: "#1e1e1e"
+
+font:
+  size: 20
+  lineHeight: 1.25
+  charWidth: 0.62   # average upper-case advance, em. 0.58 was a touch tight in Excalifont.
+
+wrap: 14            # characters per line
+angle: 1.5          # max box rotation, degrees
+padding: { min: 0.5, max: 1.0 }   # em, chosen per box from the seed
+actorSize: 64
+# These icons were drawn at the reference's native scale (1089px wide). Sizing
+# them by viewBox times iconScale keeps their proportions; 1.47 maps the
+# reference onto a 1600px canvas. Without iconScale, icons are fitted to actorSize.
+iconScale: 1.47
+
+density:
+  tight:  { clusterGap: 16, turnGap: 10 }
+  medium: { clusterGap: 26, turnGap: 14 }
+  loose:  { clusterGap: 40, turnGap: 20 }

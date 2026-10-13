@@ -1,0 +1,41 @@
+@citizen  person
+@phone    phone
+@hmrc     building   HMRC
+@onelogin service    One Login
+@branch   building   Post Office
+
+citizen: Where do I start?
+phone: Have you got photo ID?        #id
+citizen: A passport                  < id
+phone: Scan your passport
+citizen: Only a driving licence      < id
+phone: That works too
+
+citizen: Can my accountant do this for me?
+hmrc: Sure. I'll grant access for this return only.
+
+!onelogin: ALERT! Details don't match   #alert
+onelogin: Try in person?
+branch: Nearest branch: 0.4 miles
+
+citizen: Who can vouch for me?          #vouch
+branch: I can
+
+citizen: Why do you need my face?
+onelogin: To match it to your passport photo
+
+phone: Hold still
+citizen: Like this?
+phone: Lovely. Checking now.
+
+hmrc: Your return is due on 31 January
+citizen: Already?
+
+citizen: Is this the real HMRC?
+onelogin: Look for gov.uk in the address
+
+branch: Bring the letter and your passport
+citizen: Do I need an appointment?
+branch: No, just turn up
+
+~ alert vouch

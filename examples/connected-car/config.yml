@@ -1,0 +1,5 @@
+template: connected-car
+seed: 7
+canvas: { width: 1600, ratio: "4:3" }
+density: tight
+wrap: 14

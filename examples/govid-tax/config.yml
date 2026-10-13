@@ -1,0 +1,5 @@
+template: govuk-services
+seed: 42
+canvas: { width: 1600, ratio: "4:3" }
+density: medium
+wrap: 14

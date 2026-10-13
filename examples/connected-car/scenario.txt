@@ -1,0 +1,66 @@
+# A recreation of reference/original.jpg, as a test of the tool.
+# Wording follows the original drawing, which is why it is not British English.
+
+@carpark    building-carpark   once
+@donutshop  building-donutshop once
+@office     building-office    once
+@clerk      person-deskworker-a
+@ann        person-with-phone-a
+@ben        person-with-phone-b
+@cal        person-with-phone-c
+@dee        person-with-phone-d
+@eli        person-with-phone-e
+@fay        person-with-phone-f
+@car1       car-a
+@car2       car-b
+@car3       car-c
+@car4       car-d
+@car5       car-e
+@car6       car-f
+@taxi       taxi
+
+ann: Where is my car?
+ann: Where am I?
+car1: Two blocks ahead, on your left
+car1@carpark: Here I am!
+
+donutshop: We know you love our donuts!
+donutshop: Special for you!
+car2: Donuts!
+
+ben: What's the nearest car I can use?
+taxi: I'm available
+
+clerk: I'm right around the corner.
+clerk: Who is near?
+car3: Where am I?
+car3: What's nearby?
+
+cal: Go park yourself
+car4: What's my budget?
+
+car5: Who needs a ride?
+dee: I do!
+
+car3: What's ahead?                 #ahead
+car3: Where can I park?             < ahead
+carpark: 15 parking spaces available
+car3: I'm bored                     < ahead
+car3: What are my friends doing?
+
+car6: What needs doing?        #needs
+!car6: ALERT!
+car6: Change course
+
+eli: I will pay for gas if someone can give me a ride
+car5: Awesome. I was going there anyway.
+
+fay: Can I borrow your car?
+ben: Sure. Let me grant you access just for tonight.
+car2: OK
+car2: I'm authorizing Karl to drive you tonight. But if he gets drunk lock him out and call me.
+
+fay: Where is the best place to meet?   #meet
+office: We have a quiet room available at 2 PM.
+
+~ needs meet

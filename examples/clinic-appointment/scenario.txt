@@ -1,0 +1,45 @@
+# Made from a four-column service blueprint for booking a clinic appointment.
+# Columns: find a slot, confirm identity, attend, follow up.
+# Rows: patient, app, receptionist, booking system, records.
+# The booking system and records are backstage; where they speak, they
+# speak through the app, so the line of visibility becomes speaker@node.
+
+@patient    person
+@app        phone
+@reception  person
+@booking    service    Booking
+@records    service    Records
+@clinic     building   Clinic
+
+# Column 1: find a slot
+patient: I need to see someone about my knee
+app: Any day next week?
+patient: Tuesday, after work
+booking@app: Tuesday 5.40 with Dr Patel
+
+# Column 2: confirm identity
+app: Is this still you?              #you
+patient: Yes, same address           < you
+app: Lovely, you're booked
+patient: No, I've moved              < you
+app: Update it here first
+
+# Column 2, the failure
+!records: ALERT! Date of birth doesn't match
+records@app: Check it with reception when you arrive
+
+# Column 3: attend
+patient: I'm here for 5.40
+reception: Take a seat, you're next
+clinic: Room 4, down the corridor
+
+# Column 3, running late
+patient: Still waiting?
+reception: Ten minutes, sorry. Dr Patel is running behind.
+
+# Column 4: follow up
+clinic: Come back in six weeks
+app: Shall I book that now?         #book
+patient: Please                     < book
+patient: I'll call instead          < book
+reception: Fine, we're open from eight

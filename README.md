@@ -54,18 +54,6 @@ Source: `examples/alpaca-keeper/scenario.txt`. Build it with:
 node --import tsx src/cli.ts build examples/alpaca-keeper --png
 ```
 
-### The livestock dealer
-
-Twenty years buying and selling from a trailer and a phone, no premises, and no record anywhere that the dealer exists. The dealer is the one operator this department has never registered, so every thread ends in something unowned: a landing page with no content owner, a definition still with policy, a number nobody has named, a form that asks for land. Again the last thread is the gap, and the hope: "I'd register tomorrow if there were a form."
-
-![Conversation map for the livestock dealer](docs/images/dealer.png)
-
-Source: `examples/dealer/scenario.txt`. Build it with:
-
-```
-node --import tsx src/cli.ts build examples/dealer --png
-```
-
 Smaller examples live alongside these: `examples/clinic-appointment/` is made from a service blueprint, `examples/meat-export/` shows placeholder icons, and `examples/connected-car/` is a redrawing of the original.
 
 Turning an existing diagram, a brief or a list of conversations into one of these, by hand or with an AI agent? Start with `docs/conversation-maps.md`. The file format is in `docs/scenario-format.md`. Design notes are in `BRIEF-v2.md`.

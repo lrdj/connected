@@ -1,0 +1,48 @@
+# Test map for the blind-test icons, 19 Oct 2026. Made from a short written brief: a primary
+# school's everyday conversations between a parent, a teacher, the school office, the
+# building itself and a lunchbox. All five actors are declared as placeholders so the map
+# builds whether or not the icons exist.
+
+@parent     ?parent:tall
+@teacher    ?teacher:tall
+@school     ?school:wide          Oakfield Primary
+@office     ?school-office:wide   School office
+@lunchbox   ?lunchbox
+
+# The school run
+parent: Shoes on, we're late
+lunchbox: Packed. Sandwich, apple, no nuts
+parent: Coat. It's raining
+lunchbox: And a drink this time?
+
+# At the gate
+school: Gates open 8.40, close 8.55
+parent: Made it, just
+teacher: Morning! In you come
+
+# Phoning in sick
+parent: Sam's off today, temperature
+office: Thanks, I'll mark it. Note from the doctor after three days
+parent: Will do
+
+# Lost property
+teacher: Whose lunchbox is this?
+lunchbox: Label says Sam, Class 3
+office: Lost property clears out on Friday
+
+# Parents' evening
+office: Book a slot for parents' evening   #slots
+parent: Thursday after five?               < slots
+office: 5.20 with Mrs Khan
+teacher: I'll have Sam's reading record ready
+
+# The museum trip
+school: Museum trip on the 12th. Consent by Friday
+parent: Signed. Packed lunch?
+teacher: Yes, and a coat. It's outdoors
+lunchbox: Me again
+
+# Snow day
+!office: ALERT! School closed today, snow
+parent: We're both at work. Anything on?
+office: Sorry, nothing today

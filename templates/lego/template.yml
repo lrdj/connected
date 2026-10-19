@@ -8,8 +8,16 @@ name: lego
 voice: Short and plain. Questions get answered in the next turn. Systems speak like helpful people.
 
 icons:
+  # Spike: rendered from LDraw parts by spike/render.mjs (19 Oct 2026), not a Nano Banana sprite
+  nurse: icons/nurse.svg
   person: icons/person.svg
   phone: icons/phone.svg
+  # Blind test (19 Oct 2026): five school icons rendered from LDraw parts by spike/render.mjs; models in spike/blind-test/
+  teacher: icons/teacher.svg
+  parent: icons/parent.svg
+  school: icons/school.svg
+  school-office: icons/school-office.svg
+  lunchbox: icons/lunchbox.svg
   building: icons/building.svg          # a back-office desk, for RPA, APHA and the like
   service: icons/service.svg            # a server brick, for SAM, LIS, LUIS, GOV.UK
   alpaca-keeper: icons/alpaca-keeper.svg

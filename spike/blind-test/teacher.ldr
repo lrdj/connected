@@ -1,0 +1,23 @@
+0 Teacher: glasses, side-parted hair, dark grey suit and tie, red book carried at the side in the right hand
+0 Name: teacher.ldr
+0 Built from spike/minifig.ldr; arm, hand and book lines from: node spike/blind-test/hold.mjs 10 book-down 24093.dat 4 72 14 0
+0 ---- hair
+1 308 0 -24 0 1 0 0 0 1 0 0 0 1 15500.dat
+0 ---- head
+1 14 0 -24 0 1 0 0 0 1 0 0 0 1 3626bp0i.dat
+0 ---- torso
+1 72 0 0 0 1 0 0 0 1 0 0 0 1 973p18.dat
+0 ---- right arm, raised 10 degrees
+1 72 -15.552 8 0 0.98544 -0.16745 -0.02953 0.17004 0.97047 0.17112 0 -0.17365 0.98481 3818.dat
+0 ---- right hand (peg in the cuff socket, grip axis across the body)
+1 14 -23.35176 23.79755 -13.03155 0.13929 0.98544 0.09753 -0.80722 0.17004 -0.56522 -0.57358 0 0.81915 3820.dat
+0 ---- book in the right hand, spine in the grip, cover hanging
+1 4 -25.12771 29.2504 -21.13689 0.20515 -0.97847 -0.02261 0 -0.0231 0.99973 -0.97873 -0.2051 -0.00474 24093.dat
+0 ---- left arm, at rest
+1 72 15.552 8 0 0.98544 0.17004 0 -0.17004 0.98544 0 0 0 1 3819.dat
+0 ---- left hand (peg in the cuff socket, grip axis across the body)
+1 14 23.6929 25.77458 -9.9 -0.12023 0.98544 -0.12023 -0.69681 -0.17004 -0.69681 -0.70711 0 0.70711 3820.dat
+0 ---- hips and legs
+1 72 0 32 0 1 0 0 0 1 0 0 0 1 3815b.dat
+1 72 0 44 0 1 0 0 0 1 0 0 0 1 3817c.dat
+1 72 0 44 0 1 0 0 0 1 0 0 0 1 3816c.dat

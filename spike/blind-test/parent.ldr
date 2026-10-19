@@ -1,0 +1,23 @@
+0 Parent: swept short hair, woman face, red zip jacket, blue jeans, blue school bag hanging from the right hand
+0 Name: parent.ldr
+0 Built from spike/minifig.ldr; arm, hand and bag lines from: node spike/blind-test/hold.mjs 10 hang:0,-38,4.5 11245.dat 1 4 14 0
+0 ---- hair
+1 308 0 -24 0 1 0 0 0 1 0 0 0 1 20877.dat
+0 ---- head
+1 14 0 -24 0 1 0 0 0 1 0 0 0 1 3626bp02.dat
+0 ---- torso
+1 4 0 0 0 1 0 0 0 1 0 0 0 1 973p13.dat
+0 ---- right arm, raised 10 degrees
+1 4 -15.552 8 0 0.98544 -0.16745 -0.02953 0.17004 0.97047 0.17112 0 -0.17365 0.98481 3818.dat
+0 ---- right hand (peg in the cuff socket, grip axis across the body)
+1 14 -23.35176 23.79755 -13.03155 0.13929 0.98544 0.09753 -0.80722 0.17004 -0.56522 -0.57358 0 0.81915 3820.dat
+0 ---- bag hanging from the right hand by its handle
+1 1 -26.0509 67.2504 -16.73261 -0.97873 0 0.20515 0 1 0 -0.20515 0 -0.97873 11245.dat
+0 ---- left arm, at rest
+1 4 15.552 8 0 0.98544 0.17004 0 -0.17004 0.98544 0 0 0 1 3819.dat
+0 ---- left hand (peg in the cuff socket, grip axis across the body)
+1 14 23.6929 25.77458 -9.9 -0.12023 0.98544 -0.12023 -0.69681 -0.17004 -0.69681 -0.70711 0 0.70711 3820.dat
+0 ---- hips and legs
+1 1 0 32 0 1 0 0 0 1 0 0 0 1 3815b.dat
+1 1 0 44 0 1 0 0 0 1 0 0 0 1 3817c.dat
+1 1 0 44 0 1 0 0 0 1 0 0 0 1 3816c.dat

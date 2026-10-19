@@ -1,0 +1,7 @@
+template: lego
+seed: 5
+canvas: { width: 1600, ratio: "4:3" }
+density: medium
+wrap: 14
+# Blind test of five LEGO-built icons (teacher, parent, school, school-office, lunchbox),
+# 19 Oct 2026. The scenario exists to see the icons on a map, not to document a real school.

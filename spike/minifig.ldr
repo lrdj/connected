@@ -1,0 +1,25 @@
+0 Minifig template: standing, right arm raised 35 degrees holding an item
+0 Name: minifig.ldr
+0 Slots, top to bottom. Colour codes are LDConfig: 0 black, 1 blue, 14 yellow, 15 white.
+0 The figure faces -Z; its right side is -X. Arm and hand lines come from spike/pose.mjs (see spike/hand.mjs):
+0   the hand's peg sits in the arm's cuff socket and a held item's bar lies along the grip axis.
+0 ---- hair or hat (same origin as the head)
+1 0 0 -24 0 1 0 0 0 1 0 0 0 1 3901.dat
+0 ---- head
+1 14 0 -24 0 1 0 0 0 1 0 0 0 1 3626b.dat
+0 ---- torso
+1 15 0 0 0 1 0 0 0 1 0 0 0 1 973.dat
+0 ---- right arm, raised 35 degrees
+1 15 -15.552 8 0 0.98544 -0.13929 -0.09753 0.17004 0.80722 0.56522 0 -0.57358 0.81915 3818.dat
+0 ---- right hand (peg in the cuff socket, grip axis across the body)
+1 14 -22.14616 16.81062 -18.9502 0.16745 0.98544 0.02953 -0.97047 0.17004 -0.17112 -0.17365 0 0.98481 3820.dat
+0 ---- item in the right hand, bottom edge in the grip
+1 19 -20.3682 2.48296 -32.08524 0.11796 -0.24842 -0.96144 -0.99256 0 -0.12178 0.03025 0.96865 -0.24658 3069b.dat
+0 ---- left arm, at rest
+1 15 15.552 8 0 0.98544 0.17004 0 -0.17004 0.98544 0 0 0 1 3819.dat
+0 ---- left hand (peg in the cuff socket, grip axis across the body)
+1 14 23.6929 25.77458 -9.9 -0.12023 0.98544 -0.12023 -0.69681 -0.17004 -0.69681 -0.70711 0 0.70711 3820.dat
+0 ---- hips and legs
+1 1 0 32 0 1 0 0 0 1 0 0 0 1 3815b.dat
+1 1 0 44 0 1 0 0 0 1 0 0 0 1 3817c.dat
+1 1 0 44 0 1 0 0 0 1 0 0 0 1 3816c.dat

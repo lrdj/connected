@@ -1,0 +1,23 @@
+0 Nurse: white torso with red cross, hair swept back into a bun, blue legs, clipboard in the raised right hand
+0 Name: nurse.ldr
+0 Built from spike/minifig.ldr; arm, hand and item lines from: node spike/pose.mjs 20 3069b.dat 19 40 15 14 -60
+0 ---- hair
+1 0 0 -24 0 1 0 0 0 1 0 0 0 1 99240.dat
+0 ---- head
+1 14 0 -24 0 1 0 0 0 1 0 0 0 1 3626bp02.dat
+0 ---- torso
+1 15 0 0 0 1 0 0 0 1 0 0 0 1 973p24.dat
+0 ---- right arm, raised 20 degrees
+1 15 -15.552 8 0 0.98544 -0.15978 -0.05816 0.17004 0.92601 0.33704 0 -0.34202 0.93969 3818.dat
+0 ---- right hand (peg in the cuff socket, grip axis across the body)
+1 14 -22.92334 21.31468 -15.76714 0.15411 0.98544 0.07186 -0.89311 0.17004 -0.41646 -0.42262 0 0.90631 3820.dat
+0 ---- item in the right hand, bottom edge in the grip
+1 19 -22.59569 9.32475 -28.41063 0.05877 -0.22734 -0.97204 -0.99818 0 -0.06035 0.01372 0.97382 -0.22692 3069b.dat
+0 ---- left arm, at rest
+1 15 15.552 8 0 0.98544 0.17004 0 -0.17004 0.98544 0 0 0 1 3819.dat
+0 ---- left hand (peg in the cuff socket, grip axis across the body)
+1 14 23.6929 25.77458 -9.9 -0.12023 0.98544 -0.12023 -0.69681 -0.17004 -0.69681 -0.70711 0 0.70711 3820.dat
+0 ---- hips and legs
+1 1 0 32 0 1 0 0 0 1 0 0 0 1 3815b.dat
+1 1 0 44 0 1 0 0 0 1 0 0 0 1 3817c.dat
+1 1 0 44 0 1 0 0 0 1 0 0 0 1 3816c.dat

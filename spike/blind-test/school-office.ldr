@@ -1,0 +1,48 @@
+0 School office, vignette: two staff seated at desks on an 8 x 8 plate, a computer on the left desk, a radio handset on the right, one writing with a pen
+0 Name: school-office.ldr
+0 Light bluish grey (71) plate, reddish brown (70) desks with tan (19) tops, dark grey (72) seats and computer. Figures face -Z; the seated figure offsets are the template's plus (x, -64, z).
+0 ---- base plate (top at y 0)
+1 71 0 0 0 1 0 0 0 1 0 0 0 1 41539.dat
+0 ---- two desks: 2 x 4 bricks along X at z -20 (footprint z -40..0), two 2 x 2 tiles each on top
+1 70 -40 -24 -20 1 0 0 0 1 0 0 0 1 3001.dat
+1 70 40 -24 -20 1 0 0 0 1 0 0 0 1 3001.dat
+1 19 -60 -32 -20 1 0 0 0 1 0 0 0 1 3068b.dat
+1 19 -20 -32 -20 1 0 0 0 1 0 0 0 1 3068b.dat
+1 19 20 -32 -20 1 0 0 0 1 0 0 0 1 3068b.dat
+1 19 60 -32 -20 1 0 0 0 1 0 0 0 1 3068b.dat
+0 ---- computer on the left desk: slope 2 x 2 with screen pattern facing the viewer (-Z); footprint z -40..0
+1 72 -50 -56 -10 1 0 0 0 1 0 0 0 1 3039p23.dat
+0 ---- phone on the right desk: minifig radio (3962b) standing as a handset; its body is 18 below its origin, so origin at desk top -32 - 18
+1 0 60 -50 -30 1 0 0 0 1 0 0 0 1 3962b.dat
+0 ---- seated figure at x -40: 2 x 2 brick, seat, sitting legs, torso at y -64
+1 71 -40 -24 30 1 0 0 0 1 0 0 0 1 3003.dat
+1 72 -40 -32 30 1 0 0 0 1 0 0 0 1 4079.dat
+1 1 -40 -32 30 1 0 0 0 1 0 0 0 1 73200b-f2.dat
+1 73 -40 -64 30 1 0 0 0 1 0 0 0 1 973.dat
+1 14 -40 -88 30 1 0 0 0 1 0 0 0 1 3626bp02.dat
+1 308 -40 -88 30 1 0 0 0 1 0 0 0 1 62711.dat
+0 ---- left arm, at rest
+1 73 -24.448 -56 30 0.98544 0.17004 0 -0.17004 0.98544 0 0 0 1 3819.dat
+0 ---- left hand (peg in the cuff socket, grip axis across the body)
+1 14 -16.3071 -38.2254 20.1 -0.12023 0.98544 -0.12023 -0.69681 -0.17004 -0.69681 -0.70711 0 0.70711 3820.dat
+0 ---- right arm, raised 50 degrees
+1 14 -55.552 -56 30 0.98544 -0.1093 -0.13026 0.17004 0.63343 0.75489 0 -0.76604 0.64279 3818.dat
+0 ---- right hand (peg in the cuff socket, grip axis across the body)
+1 0 -61.2554 -52.3518 9.15816 0.16939 0.98544 -0.01482 -0.98169 0.17004 0.08589 0.08716 0 0.99619 3820.dat
+0 ---- seated figure at x 40: 2 x 2 brick, seat, sitting legs, torso at y -64
+1 71 40 -24 30 1 0 0 0 1 0 0 0 1 3003.dat
+1 72 40 -32 30 1 0 0 0 1 0 0 0 1 4079.dat
+1 1 40 -32 30 1 0 0 0 1 0 0 0 1 73200b-f2.dat
+1 15 40 -64 30 1 0 0 0 1 0 0 0 1 973p06.dat
+1 14 40 -88 30 1 0 0 0 1 0 0 0 1 3626bp01.dat
+1 0 40 -88 30 1 0 0 0 1 0 0 0 1 2003.dat
+0 ---- left arm, at rest
+1 15 55.552 -56 30 0.98544 0.17004 0 -0.17004 0.98544 0 0 0 1 3819.dat
+0 ---- left hand (peg in the cuff socket, grip axis across the body)
+1 14 63.6929 -38.2254 20.1 -0.12023 0.98544 -0.12023 -0.69681 -0.17004 -0.69681 -0.70711 0 0.70711 3820.dat
+0 ---- right arm, raised 20 degrees
+1 15 24.448 -56 30 0.98544 -0.15978 -0.05816 0.17004 0.92601 0.33704 0 -0.34202 0.93969 3818.dat
+0 ---- right hand (peg in the cuff socket, grip axis across the body)
+1 14 17.0767 -42.6853 14.2329 0.15411 0.98544 0.07186 -0.89311 0.17004 -0.41646 -0.42262 0 0.90631 3820.dat
+0 ---- bar held in the right hand
+1 0 15.5547 -38.7044 5.26513 0.05877 0.97204 -0.22734 -0.99818 0.06035 0 0.01372 0.22692 0.97382 35809.dat

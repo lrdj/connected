@@ -1,0 +1,52 @@
+0 School, microscale: long tan two-storey block with blue 1 x 1 windows and a pitched grey roof, a clock tower at the right end, a lattice fence in front
+0 Name: school.ldr
+0 Green (2) 6 x 12 base, tan (19) walls, trans light blue (43) windows, dark bluish grey (72) door, roof and tower cap, white (15) fence. Front is -Z.
+0 Cheese slopes (85984) have their origin at the BASE, body rising 15.6: place them at the top y of the brick below.
+0 ---- base plate 6 x 12 (top at y 0); x -120..120, z -60..60
+1 2 0 0 0 1 0 0 0 1 0 0 0 1 3028.dat
+0 ---- block footprint x -100..100, z -20..20. Back rows: 1 x 4 and 1 x 6 tan bricks
+1 19 -60 -24 10 1 0 0 0 1 0 0 0 1 3010.dat
+1 19 40 -24 10 1 0 0 0 1 0 0 0 1 3009.dat
+1 19 -60 -48 10 1 0 0 0 1 0 0 0 1 3010.dat
+1 19 40 -48 10 1 0 0 0 1 0 0 0 1 3009.dat
+0 ---- ground floor front row, left to right: window, wall, window, wall, door, wall, window, wall, window, wall
+1 43 -90 -24 -10 1 0 0 0 1 0 0 0 1 3005.dat
+1 19 -70 -24 -10 1 0 0 0 1 0 0 0 1 3005.dat
+1 43 -50 -24 -10 1 0 0 0 1 0 0 0 1 3005.dat
+1 19 -30 -24 -10 1 0 0 0 1 0 0 0 1 3005.dat
+1 72 -10 -24 -10 1 0 0 0 1 0 0 0 1 3005.dat
+1 19 10 -24 -10 1 0 0 0 1 0 0 0 1 3005.dat
+1 43 30 -24 -10 1 0 0 0 1 0 0 0 1 3005.dat
+1 19 50 -24 -10 1 0 0 0 1 0 0 0 1 3005.dat
+1 43 70 -24 -10 1 0 0 0 1 0 0 0 1 3005.dat
+1 19 90 -24 -10 1 0 0 0 1 0 0 0 1 3005.dat
+0 ---- first floor front row: windows over the ground floor windows and over the door
+1 43 -90 -48 -10 1 0 0 0 1 0 0 0 1 3005.dat
+1 19 -70 -48 -10 1 0 0 0 1 0 0 0 1 3005.dat
+1 43 -50 -48 -10 1 0 0 0 1 0 0 0 1 3005.dat
+1 19 -30 -48 -10 1 0 0 0 1 0 0 0 1 3005.dat
+1 43 -10 -48 -10 1 0 0 0 1 0 0 0 1 3005.dat
+1 19 10 -48 -10 1 0 0 0 1 0 0 0 1 3005.dat
+1 43 30 -48 -10 1 0 0 0 1 0 0 0 1 3005.dat
+1 19 50 -48 -10 1 0 0 0 1 0 0 0 1 3005.dat
+1 43 70 -48 -10 1 0 0 0 1 0 0 0 1 3005.dat
+1 19 90 -48 -10 1 0 0 0 1 0 0 0 1 3005.dat
+0 ---- pitched roof: front row of 1 x 2 cheese slopes facing -Z, back row turned 180 to face +Z
+1 72 -80 -48 -10 1 0 0 0 1 0 0 0 1 85984.dat
+1 72 -40 -48 -10 1 0 0 0 1 0 0 0 1 85984.dat
+1 72 0 -48 -10 1 0 0 0 1 0 0 0 1 85984.dat
+1 72 40 -48 -10 1 0 0 0 1 0 0 0 1 85984.dat
+1 72 80 -48 -10 1 0 0 0 1 0 0 0 1 85984.dat
+1 72 -80 -48 10 -1 0 0 0 1 0 0 0 -1 85984.dat
+1 72 -40 -48 10 -1 0 0 0 1 0 0 0 -1 85984.dat
+1 72 0 -48 10 -1 0 0 0 1 0 0 0 -1 85984.dat
+1 72 40 -48 10 -1 0 0 0 1 0 0 0 -1 85984.dat
+1 72 80 -48 10 -1 0 0 0 1 0 0 0 -1 85984.dat
+0 ---- clock tower at the right end (x 100..120 would hang off; it sits at x 110 inside the plate), two 1 x 2 bricks, the clock-face brick, a cheese slope cap
+1 19 110 -24 -10 1 0 0 0 1 0 0 0 1 3004.dat
+1 19 110 -48 -10 1 0 0 0 1 0 0 0 1 3004.dat
+1 15 110 -96 -10 1 0 0 0 1 0 0 0 1 3245bp07.dat
+1 72 110 -96 -10 1 0 0 0 1 0 0 0 1 85984.dat
+0 ---- playground fence along the front, two 1 x 4 lattice fences (origin at the top, 24 tall) a stud in from the plate edge
+1 15 -60 -24 -40 1 0 0 0 1 0 0 0 1 3633.dat
+1 15 20 -24 -40 1 0 0 0 1 0 0 0 1 3633.dat

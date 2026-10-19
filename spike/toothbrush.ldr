@@ -1,0 +1,7 @@
+0 Toothbrush, kit-bashed: a 3L bar handle with a 1 x 1 plate head, stud up as the bristles
+0 Name: toothbrush.ldr
+0 Bar 87994 runs along +Y from its origin, so it is turned to lie along +X (0..60); the plate sits past its end, centred on the bar's thickness.
+0 ---- handle
+1 1 0 0 0 0 1 0 -1 0 0 0 0 1 87994.dat
+0 ---- head
+1 15 70 -4 0 1 0 0 0 1 0 0 0 1 3024.dat

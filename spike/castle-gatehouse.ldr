@@ -1,0 +1,26 @@
+0 Castle gatehouse, kit-bashed: two round towers, a wall with an arch between, portcullis down
+0 Name: castle-gatehouse.ldr
+0 Light bluish grey (71) stone, dark bluish grey (72) tops, black portcullis, green (2) 8 x 8 base plate. Gateway faces -Z.
+0 ---- base plate (y 0..8)
+1 2 0 0 0 1 0 0 0 1 0 0 0 1 41539.dat
+0 ---- left tower: four 2 x 2 round bricks at x -60 with a 2 x 2 x 2 cone roof (cone origin is its top; it spans 48 down)
+1 71 -60 -24 0 1 0 0 0 1 0 0 0 1 3941.dat
+1 71 -60 -48 0 1 0 0 0 1 0 0 0 1 3941.dat
+1 71 -60 -72 0 1 0 0 0 1 0 0 0 1 3941.dat
+1 71 -60 -96 0 1 0 0 0 1 0 0 0 1 3941.dat
+1 72 -60 -144 0 1 0 0 0 1 0 0 0 1 3942c.dat
+0 ---- right tower at x +60
+1 71 60 -24 0 1 0 0 0 1 0 0 0 1 3941.dat
+1 71 60 -48 0 1 0 0 0 1 0 0 0 1 3941.dat
+1 71 60 -72 0 1 0 0 0 1 0 0 0 1 3941.dat
+1 71 60 -96 0 1 0 0 0 1 0 0 0 1 3941.dat
+1 72 60 -144 0 1 0 0 0 1 0 0 0 1 3942c.dat
+0 ---- wall between the towers, 4 studs wide along X, one stud deep at z 0: arch 1 x 4 x 2 at the bottom, two 1 x 4 bricks above
+1 71 0 -48 0 1 0 0 0 1 0 0 0 1 6182.dat
+1 71 0 -72 0 1 0 0 0 1 0 0 0 1 3010.dat
+1 71 0 -96 0 1 0 0 0 1 0 0 0 1 3010.dat
+0 ---- battlements on the wall: 1 x 1 bricks on the outer studs
+1 71 -30 -120 0 1 0 0 0 1 0 0 0 1 3005.dat
+1 71 30 -120 0 1 0 0 0 1 0 0 0 1 3005.dat
+0 ---- portcullis: a lattice fence standing in the arch opening, slightly forward of the wall
+1 0 0 -48 -12 1 0 0 0 1 0 0 0 1 3185.dat

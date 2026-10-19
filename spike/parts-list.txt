@@ -1,0 +1,108 @@
+# Curated LDraw parts for connected icons. number<TAB>group<TAB>note.
+# spike/parts-meta.mjs turns this into spike/parts-meta.yml with measured bounds.
+# General rule for bricks, plates, tiles, slopes, arches, fences, cones: the origin is
+# the top centre of the body; the body extends +Y (down); studs are 4 above the origin.
+# "1 x N" parts run along X. A part at y sits on a part whose top is at y + its own height.
+
+# ---- minifig (MLCad offsets; the figure faces -Z; its right side is -X)
+3626b	minifig	Head, plain. Origin at the top of the neck; body 24 down, stud 4 up. Place at 0 -24 0 on a torso at the origin.
+3626bp01	minifig	Head with the standard grin. Same placement as 3626b.
+3626bp02	minifig	Head with the standard woman face. Same placement as 3626b.
+973	minifig	Torso. Origin at the shoulders; body 32 down, neck stud 12 up. Place at 0 0 0.
+973p24	minifig	Torso with red cross. Grep parts.lst for "Minifig Torso with" to find other patterns.
+3818	minifig	Right arm. Origin at the shoulder pivot; hangs down with the forearm bent to -Z. Place at -15.552 8 0 with rotation 0.985 -0.170 0 0.170 0.985 0 0 0 1; spike/pose.mjs swings it. Cuff socket mouth at -5 18.9 -9.9 in arm space, axis (0 -0.707 0.707) up into the forearm: that is where the hand's peg goes.
+3819	minifig	Left arm. Place at 15.552 8 0 with rotation 0.985 0.170 0 -0.170 0.985 0 0 0 1. Cuff socket mouth at 5 18.9 -9.9.
+3820	minifig	Hand. Origin at the base of the peg; the peg is a cylinder along +Z, 13 long, and goes into the arm's cuff socket. Grip centre at 0 -0.82 -9.89; the grip is a half-cylinder whose axis is the hand's Y tilted 14.5 degrees to -Z (0 -0.968 -0.250), so a held bar runs along that line, not along X. spike/hand.mjs places it; do not use the old MLCad rest-pose numbers.
+3815b	minifig	Hips. Origin at the top of the hip block; pin 11 up into the torso. Place at 0 32 0.
+3816c	minifig	Right leg. Origin at the hip pin. Place at 0 44 0.
+3817c	minifig	Left leg. Place at 0 44 0.
+73200b-f1	minifig	Hips and legs in one piece, standing. Place at 0 32 0 instead of hips plus legs.
+73200b-f2	minifig	Hips and legs in one piece, sitting. Place at 0 32 0; the thighs run to -Z, so seat the figure on something 24 high in front.
+3901	minifig	Hair, male short. Hair and hats share the head origin: place at 0 -24 0.
+12890	minifig	Hair, female long straight. DO NOT USE: reaches y 43, well past the chin, and swallows the face from the fixed camera. Hair must stay within about y 21 and x ±18; see the recipe doc.
+62711	minifig	Hair, short bob. Tidy, within the head. Place at 0 -24 0.
+99240	minifig	Hair, swept back into a bun. Tidy, within the head; the nurse. Place at 0 -24 0.
+15427	minifig	Hair, ponytail. Place at 0 -24 0.
+2003	minifig	Hair, short mop top. Place at 0 -24 0.
+21788	minifig	Hair, short smooth. Place at 0 -24 0.
+87991	minifig	Hair, tousled with side parting. Place at 0 -24 0.
+3624	minifig	Police hat. Place at 0 -24 0.
+3833	minifig	Construction helmet. Place at 0 -24 0.
+3069b	minifig-item	Tile 1 x 2: the clipboard, sign or phone a figure holds. 40 along X, 20 deep, 8 thick; studless top at -Y. pose.mjs stands it in the hand clip.
+24093	minifig-item	Book cover, 2 x 3 and a plate thick. Held like the tile.
+3899	minifig-item	Cup. Origin at the base; handle to +X. Its bar-sized body fits the hand clip.
+35809	minifig-item	Pen. A 4-ish long bar with a tip; fits the hand clip.
+3837	minifig-item	Shovel. Long bar handle, blade at the far end.
+4079	furniture	Minifig seat 2 x 2. Origin top of the seat body; a sitting figure's hips go at the seat top.
+4345b	container	Box 2 x 2 x 2 with hollow studs: a crate, lunchbox or parcel at minifig scale. Lid is 4346.
+
+# ---- bricks
+3005	brick	Brick 1 x 1. 20 square, 24 tall.
+3004	brick	Brick 1 x 2. 40 along X.
+3622	brick	Brick 1 x 3. 60 along X.
+3010	brick	Brick 1 x 4. 80 along X.
+3009	brick	Brick 1 x 6. 120 along X.
+3003	brick	Brick 2 x 2.
+3002	brick	Brick 2 x 3. 60 along X, 40 along Z.
+3001	brick	Brick 2 x 4. 80 along X, 40 along Z. Turn it 90 degrees about Y (0 0 -1 / 0 1 0 / 1 0 0) to run along Z.
+2357	brick	Brick 2 x 2 corner, L-shaped.
+14716	brick	Brick 1 x 1 x 3. 72 tall: a pillar.
+3245c	brick	Brick 1 x 2 x 2. 48 tall.
+3941	brick	Brick 2 x 2 round. Stack for towers, chimneys, silos.
+3062b	brick	Brick 1 x 1 round with hollow stud. A bar fits in the stud.
+3942c	brick	Cone 2 x 2 x 2. 48 tall; roof for a 2 x 2 round tower: place at tower top y - 48.
+4589	brick	Cone 1 x 1. 24 tall: a small spire, bottle or horn.
+4070	brick	Brick 1 x 1 with headlight: a stud on the -Z face for side-mounting a tile.
+3700	brick	Technic brick 1 x 2 with hole: a porthole or axle mount.
+60583b	brick	Brick 1 x 1 x 3 with two clips on the -Z face: holds a bar vertically.
+2877	brick	Brick 1 x 2 with grille on -Z: vents, radiators, a microscale window row.
+4216	brick	Brick 1 x 2 with groove.
+
+# ---- plates and tiles
+3024	plate	Plate 1 x 1. 8 thick.
+6141	plate	Plate 1 x 1 round.
+3023b	plate	Plate 1 x 2. 40 along X.
+3623	plate	Plate 1 x 3.
+3710	plate	Plate 1 x 4.
+3666	plate	Plate 1 x 6.
+3022	plate	Plate 2 x 2.
+3021	plate	Plate 2 x 3. 60 along X.
+3020	plate	Plate 2 x 4. 80 along X.
+3031	plate	Plate 4 x 4.
+3032	plate	Plate 4 x 6. 120 along X.
+3035	plate	Plate 4 x 8. 160 along X.
+3036	plate	Plate 6 x 8. 160 along X, 120 along Z.
+41539	plate	Plate 8 x 8. 160 square: the vignette baseplate.
+3794b	plate	Plate 1 x 2 with one centre stud (jumper): offsets the part above by half a stud.
+87580	plate	Plate 2 x 2 with one centre stud: centres a 1 x 1 on a 2 x 2.
+18674	plate	Plate 2 x 2 round with one centre stud: a table top or base.
+92280	plate	Plate 1 x 2 with a clip on top: holds a bar horizontally.
+2540	plate	Plate 1 x 2 with handle on the -Z side: a drawer front, a step.
+3070b	tile	Tile 1 x 1. 8 thick, no stud: a key, a cap, a phone screen.
+3069b	tile	Tile 1 x 2. Also the minifig-held board.
+2431	tile	Tile 1 x 4.
+3068b	tile	Tile 2 x 2.
+26603	tile	Tile 2 x 3: a desk top or a screen.
+2412b	tile	Tile 1 x 2 grille: a keyboard, vent or radiator at minifig scale.
+4740	dish	Dish 2 x 2 inverted: a bowl, a satellite dish, a lamp shade.
+
+# ---- slopes, arches, windows, fences
+54200	slope	Slope 31 1 x 1 x 0.667 (cheese slope). 8 tall: microscale roofs and vehicle noses.
+85984	slope	Slope 31 1 x 2 x 0.667.
+3040b	slope	Slope 45 2 x 1. 24 tall; the slope faces -Z.
+3039	slope	Slope 45 2 x 2. The slope faces -Z.
+4286	slope	Slope 33 3 x 1. Long low roof.
+3298	slope	Slope 33 3 x 2.
+3659	arch	Arch 1 x 4. 24 tall, opening 2 studs wide.
+6182	arch	Arch 1 x 4 x 2. 48 tall; the gateway. Origin at the top like a brick.
+3185	fence	Fence lattice 1 x 4 x 2. 48 tall; origin at the top. The portcullis.
+60592	window	Window 1 x 2 x 2 frame, no sill. 48 tall; glass is a separate part if wanted.
+60593	window	Window 1 x 2 x 3 frame, no sill. 72 tall.
+
+# ---- bars
+87994	bar	Bar 3L. Origin at one end; runs +Y 60; radius 4. Fits hand clips, hollow studs and clips. Turn it with 0 1 0 / -1 0 0 / 0 0 1 to run along +X.
+30374	bar	Bar 4L. Origin at one end; runs +Y 80.
+3957a	bar	Antenna 4H with rounded top: an aerial, a flagpole, a pointer.
+
+# ---- animals (moulded; prefer these over brick-built)
+13564	animal	Cow horn 2.25L. Runs -X from its pin; mount on a stud at the head's top corner and tilt up.

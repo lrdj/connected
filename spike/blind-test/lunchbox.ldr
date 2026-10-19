@@ -1,0 +1,4 @@
+0 Lunchbox, accessory: one minifig suitcase (closed), blue, turned 30 degrees about Y so both faces and the handle show
+0 Name: lunchbox.ldr
+0 4449-f1 bounds x -20..20, y -4..29, z -8..8: a 2-wide, 1.4-tall case with the handle at the top. Chosen over a 2 x 2 x 2 container box with a door and a handle plate, which rendered as a crate with a cage on top.
+1 1 0 0 0 0.866025 0 0.5 0 1 0 -0.5 0 0.866025 4449-f1.dat

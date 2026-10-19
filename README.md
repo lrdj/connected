@@ -16,7 +16,7 @@ You write the conversations as a script:
 
 ```
 @keeper   ?alpaca-keeper:tall once
-@letter   ?letter                Letter from Defra
+@letter   ?letter                Letter from Gov Department
 
 letter: From Day 1 you must register your alpacas
 keeper: Register with whom? I'm not a farm
@@ -40,11 +40,11 @@ The payoff is a map that invites the question "shall we go and talk to one of th
 
 ## Examples
 
-Both of these are real maps from a Defra programme, with names generalised. They were drawn for a cross-cutting show and tell in October 2026, one map per type of operator, to show what Day 1 of a new livestock regime would feel like from the operator's side. Both use the `lego` template, whose icons are Lego-style figures at their desks, in their paddocks and with their animals.
+Both of these are real maps from a UK Government programme, with names generalised. They were drawn for a cross-cutting show and tell, one map per type of operator, to show what impacts a new livestock regime would feel like from the operator's side. Both use the `lego` template, whose icons are Lego-style figures at their desks, in their paddocks and with their animals.
 
 ### The alpaca keeper
 
-Six alpacas behind the house, and a letter saying they must be registered. Eleven threads follow the keeper through a CPH form designed for farms, a herd mark nobody has looked up, tags no manufacturer is approved to make, a database that may not exist yet, and a register that policy wants digital and the law would accept on paper. The last thread is the gap: nobody on the programme has spoken to a keeper.
+Six alpacas behind the house, and a letter saying they must be registered. Eleven threads follow the keeper through forms designed for farms, a herd mark nobody has looked up, tags no manufacturer is approved to make, a database that may not exist yet, and a register that lawmakers want digital and the law already accepts on paper. The last thread is the gap: nobody on the programme has spoken to the actual end user: the farmer...
 
 ![Conversation map for the alpaca keeper](docs/images/alpaca-keeper.png)
 
@@ -56,7 +56,7 @@ node --import tsx src/cli.ts build examples/alpaca-keeper --png
 
 ### The livestock dealer
 
-Twenty years buying and selling from a trailer and a phone, no premises, no CPH, and no record anywhere that the dealer exists. The dealer is the one operator GB has never registered, so every thread ends in something unowned: a landing page with no content owner, a definition still with policy, a number nobody has named, a form that asks for land. Again the last thread is the gap, and the hope: "I'd register tomorrow if there were a form."
+Twenty years buying and selling from a trailer and a phone, no premises, and no record anywhere that the dealer exists. The dealer is the one operator this department has never registered, so every thread ends in something unowned: a landing page with no content owner, a definition still with policy, a number nobody has named, a form that asks for land. Again the last thread is the gap, and the hope: "I'd register tomorrow if there were a form."
 
 ![Conversation map for the livestock dealer](docs/images/dealer.png)
 

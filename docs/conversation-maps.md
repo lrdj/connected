@@ -153,6 +153,14 @@ What happens afterwards, for the person rather than the agent: draw each icon as
 
 `examples/clinic-appointment/` was made from a four-column service blueprint for booking a clinic appointment (columns: find a slot, confirm identity, attend, follow up; rows: patient, app, receptionist, booking system, records). Read its `scenario.txt` to see every rule above applied, including a fork at the identity question, a `speaker@node` turn where the records system speaks through the app, and one burst.
 
+`examples/alpaca-keeper/` and `examples/dealer/` are two maps at full scale, taken from a real programme and made from a written brief rather than a diagram: the plain-English description of what Day 1 of a new livestock regime means for one operator. Each has ten or eleven threads, grouped into acts by comment lines. Read them for three things the smaller examples do not show:
+
+- **A protagonist declared `once` in groups.** The keeper is declared three times (`keeper`, `keeper2`, `keeper3`), each `once`, and each used by two or three threads. The reader sees one person pulled into several conversations, while the institutions are drawn afresh in every thread. Declaring the protagonist `once` for all eleven threads would make a hub with eleven spokes, which the packer cannot route cleanly.
+- **The `lego` template with placeholders that resolve.** Every actor is declared with `?name`. Where `templates/lego/icons/` has a sprite of that name it is drawn; where it does not, the dashed box stands in. The scenarios did not change when the sprites arrived.
+- **A thread-comment convention.** The comment above each thread carries a status (CURRENT, PROPOSED, ASSUMED, CONTESTED), the assumption IDs the words rest on, and an "Asked:" line naming who has been consulted. The "Asked" line is the persuasive layer: when it reads lawyers, architects and suppliers but never an operator, the map makes the case for research on its own. The last thread of each map is the gap, and the hope.
+
+Both build with the `lego` template at width 2200 and `density: tight`. The dealer packs with no warnings at its seed; the alpaca map has one cross-thread link that crosses a box, left for hand finishing.
+
 ## 9. Commands
 
 ```

@@ -1,0 +1,143 @@
+# Example copied from the proto-bovine repo (conversation-maps/alpaca-keeper) on 19 Oct 2026.
+# A real map from a Defra programme, kept here to show the tool at scale:
+#   - a protagonist declared `once` in groups of two or three threads, so one person is
+#     seen pulled into several conversations while institutions repeat per thread
+#   - the `lego` sprite template (templates/lego), with `?name` placeholders that resolve
+#     to sprites and fall back to dashed boxes if a sprite is missing
+#   - a thread-comment convention: status (CURRENT, PROPOSED, ASSUMED, CONTESTED), the
+#     assumption IDs it rests on (A-numbers from that project's register), and "Asked:"
+#     naming who has been consulted. The "Asked" line is the persuasive layer.
+# Names of individuals and suppliers have been generalised; the A-numbers are left as they
+# were and mean nothing outside the source project.
+#
+# Day 1 for an alpaca keeper: the conversations one operator has to have.
+# Drafted 14 Oct 2026 for the cross-cutting show and tell. One map per operator; the
+# grid rows (registration, identification, record keeping, monitoring) are the acts.
+# Companion map: sheep-keeper (a route that exists and changes). This one is the route
+# that becomes mandatory on Day 1 for a sector of about 65,000 animals, mostly hobbyists.
+
+@keeper     ?alpaca-keeper:tall once
+@keeper2    ?alpaca-keeper:tall once
+@keeper3    ?alpaca-keeper:tall once
+@alpaca     ?alpaca
+@paddock    ?paddock:wide             Three acres
+@letter     ?letter                   Letter from Defra
+@govuk      ?govuk-page                   GOV.UK
+@rpa        ?rpa-desk:wide                  RPA
+@apha       ?apha-desk:wide                  APHA
+@apha_b    ?apha-single-desk:wide          APHA
+@apha_c    ?back-office:tall               APHA
+@sam        service                   SAM
+@samfrozen  ?service-frozen           SAM
+@luis       service                   LUIS
+@tag        ?ear-tag                  Approved tag
+@register   ?holding-register         Holding register
+
+# ---- Act 1: the letter ----
+
+# 1. The letter. PROPOSED. A025 agreed in workshop (every camelid establishment registers,
+# no exemptions); A027 OPEN (the existing voluntary route simply becomes mandatory).
+# 12 Oct: "a reuse piece". Asked: nobody has tested a letter or the route with a keeper.
+letter: From Day 1 you must register your alpacas         #day1
+keeper: Register with whom? I'm not a farm
+letter: Apply for a CPH and a herd mark, like cattle
+keeper: I've never heard of a CPH                          #cph
+
+# ---- Act 2: registration ----
+
+# 2. The CPH. PROPOSED. Plain-English Part 3: three CPH front doors kept, RPA online form
+# in England with manual entry into SAM. The form was designed for farms.
+# Asked: a business analyst on the route. No camelid keeper on the form.
+keeper: Six alpacas behind the house. Do I need a CPH?
+rpa: Yes. Fill in the form, I'll post your number
+keeper: It asks about cattle and crops. Leave them blank?
+
+# 3. The herd mark. ASSUMED. A118 OPEN (the LITP single CPH and herd-mark application, live
+# since July 2026, covers or can extend to camelids). 12 Oct: SAM already captures alpacas
+# and llamas; a BA has been asked to log in and record which fields appear. Asked: a BA.
+keeper: Got my CPH. Now a herd mark?
+sam@apha: I've a box for llamas and alpacas
+apha: What's in it? Someone log in and look
+
+# 4. The holding. ASSUMED. A030 OPEN (a GB holding maps cleanly to an EU establishment);
+# A031 OPEN (facilities, type and category need only minimal data changes once defined).
+# Asked: nobody. "Facilities" was still with policy in early October.
+paddock: Three acres and a shed. Am I an establishment?
+sam: Give me coordinates, capacity, type and facilities
+paddock: Facilities? A shelter and a hose
+
+# ---- Act 3: identification ----
+
+# 5. The tag. ASSUMED. A056 CONFIRMED in pack (pre-regime microchips are not official ID,
+# ear tags are the alternative); A057 OPEN, must be true (approved device manufacturers
+# will exist by Day 1; none approved yet). A026 OPEN (all camelids, not only new births).
+# Asked: identification policy and suppliers. No keeper, no vet.
+keeper2: They're all microchipped already
+apha_b: Those don't count. You need approved tags
+keeper2: Where do I buy them?
+!apha_b: Nobody's approved yet                              #no-tags
+
+# 6. The number. ASSUMED. A052 OPEN (Scotland and Wales agree 826-18 for camelids);
+# A051 OPEN (LUIS lead time fits before 30 June 2027; the LIS supplier takes on camelids). Plain-
+# English Part 3: "nothing commissioned", lead time asked 4 September, no answer.
+# Asked: the LIS supplier, informally. Not commissioned.
+tag: What number do I carry?
+luis: 826, 18, twelve digits, once I'm commissioned
+tag: Nobody's asked you yet, have they?                   #number
+
+# 7. The alpaca. ASSUMED. A054 CONTESTED (legacy identifiers before 21 April 2021 are
+# grandfathered under Art 87(4); date confirmed for deer, GB applicability still queried
+# for camelids). 12 Oct: microchip grandfathering parked with policy and legal.
+# Asked: lawyers. Not the people holding the animals.
+alpaca: I was chipped in 2019. Does that count?
+apha_c: For deer, yes. For you, still with the lawyers
+alpaca: So a tag in my ear as well?
+
+# ---- Act 4: record keeping ----
+
+# 8. The register. CONTESTED. A077 (digital-only register is a Deputy Director choice, not
+# EU law; policy reviewer restates a Day 1 database is required). A076 CONFIRMED for pigs,
+# contradicted for camelids. 12 Oct: no holding register exists today, everything is new,
+# the minimum is a digital form. Asked: policy. No keeper has seen a template.
+keeper2: Do I keep a register?
+apha: Yes, from Day 1. All of it is new to you
+keeper2: A notebook? A spreadsheet? An app?
+apha: Policy wants digital. The law would take paper     #register
+
+# 9. The database. ASSUMED. A099 CONFIRMED as intent (a central camelid database is a
+# Day 1 policy requirement), system and owner unresolved between EUDP, LITP and DDTS;
+# 12 Oct: LIS as holding register "if LITP has capacity". A103 OPEN (value-for-money risk
+# from "planned decommissioning"), but the platform register's own open question of 16 Sep
+# is which LIS that means: the company product (EN-14) is being wound down as the Defra
+# build (EN-15) takes its functions; the Defra build is in active development. A037 SAM
+# frozen until April 2027. Asked: architects. Nobody who would type into it.
+register: Who do I report to?
+sam: Policy says a central database by Day 1
+register: Which one?
+samfrozen: Not me, I'm frozen. Maybe LIS, if the new one has room  #database
+
+# ---- Act 5: monitoring ----
+
+# 10. The show. PROPOSED. A071 CONTESTED (no domestic movement reporting is needed at
+# Day 1); 12 Oct: no movement-reporting or compliance-check obligation for camelids.
+# Plain-English Part 4: camelid movements lawful only from registered holdings, enforced
+# by status rather than a system. Asked: policy. Nobody has asked a keeper who shows.
+keeper3: Two to a show on Saturday. What do I file?
+apha_b: Nothing, if you're registered. If not, it's unlawful
+keeper3: How would anyone know?
+
+# ---- The gap, and the hope ----
+
+# 11. The keeper nobody asked. THE UCD GAP. Plain-English Part 3 GOV.UK: guidance has to
+# reach camelid keepers outside the farming networks; the dealer landing page needs a
+# content owner. No keeper research exists for camelids on this programme; the LIS
+# research (five participants, Aug 2026) was cattle. Asked: architects, suppliers,
+# policy, lawyers. Not one keeper. The last line is the hope.
+keeper3: Has anyone asked how I'd actually do this?
+govuk: There's guidance on GOV.UK
+keeper3: I'm not in a farming network. Who tells me?        #who-tells-me
+apha_c: We've asked architects and suppliers. Not keepers
+keeper3: Then ask me. I'd help you design it               #hope
+
+~ who-tells-me cph
+~ register database

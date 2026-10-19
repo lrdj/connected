@@ -1,0 +1,100 @@
+# Lego sprite template for the proto-bovine conversation maps.
+# Icons wrap the knocked-out Nano Banana sprites in
+# ecosystem-board-assets/nano-banana-sprite-attempt/knocked-out/ as SVG so the tool
+# can embed them. Rebuild a wrapper with the `wrap` shell function in the session
+# notes, or by hand: an <svg viewBox="0 0 W H"> around one <image href="data:image/png;base64,...">, at full source size.
+# To use from the tool itself: cp -r this directory ~/Sites/connected/templates/lego
+name: lego
+voice: Short and plain. Questions get answered in the next turn. Systems speak like helpful people.
+
+icons:
+  person: icons/person.svg
+  phone: icons/phone.svg
+  building: icons/building.svg          # a back-office desk, for RPA, APHA and the like
+  service: icons/service.svg            # a server brick, for SAM, LIS, LUIS, GOV.UK
+  alpaca-keeper: icons/alpaca-keeper.svg
+  sheep-keeper: icons/sheep-keeper.svg
+  deer-keeper: icons/deer-keeper.svg
+  deer-and-fence: icons/deer-and-fence.svg
+  cattle-keeper: icons/cattle-keeper.svg
+  pig-keeper: icons/pig-keeper.svg
+  horse-keeper: icons/horse-keeper.svg
+  poultry-keeper: icons/poultry-keeper.svg
+  bee-keeper: icons/bee-keeper.svg
+  fish-keeper: icons/fish-keeper.svg
+  pet-owner: icons/pet-owner.svg
+  livestock-dealer: icons/livestock-dealer.svg
+  livestock-market: icons/livestock-market.svg
+  transporter: icons/transporter.svg
+  slaughterhouse-operator: icons/slaughterhouse-operator.svg
+  inspector: icons/inspector.svg
+  gate: icons/gate.svg
+  back-office: icons/back-office.svg
+  pio-clerk: icons/pio-clerk.svg
+  robot-entry: icons/robot-entry.svg
+  # Nameplated desks. The defaults used by the scenarios (apha-desk, rpa-desk, policy-desk)
+  # are cut from desk-clusters.png (Gemini ni07pg), on Lego baseplates like the board blocks.
+  apha-desk: icons/apha-desk.svg              # = apha-team: two APHA desks on one plate
+  rpa-desk: icons/rpa-desk.svg                # = rpa-plate-desk: one RPA desk on a plate
+  policy-desk: icons/policy-desk.svg          # = defra-plate-desk: Defra desk with the passport printer
+  rpa-team: icons/rpa-team.svg                # two RPA figures at one desk, on a plate
+  apha-team: icons/apha-team.svg
+  defra-plate-desk: icons/defra-plate-desk.svg
+  rpa-plate-desk: icons/rpa-plate-desk.svg
+  # Single desks without plates, cut from desk-pairs.png (Gemini v3z2oi)
+  apha-single-desk: icons/apha-single-desk.svg
+  rpa-single-desk: icons/rpa-single-desk.svg
+  defra-desk: icons/defra-desk.svg
+
+  # From missing-sprites-to-process.jpg (Nano Banana, 14 Oct 2026), cut by cell
+  alpaca: icons/alpaca.svg
+  goat: icons/goat.svg
+  sheep: icons/sheep.svg
+  deer: icons/deer.svg
+  cow: icons/cow.svg
+  pig: icons/pig.svg
+  horse: icons/horse.svg
+  hen: icons/hen.svg
+  fish: icons/fish.svg
+  dog: icons/dog.svg
+  letter: icons/letter.svg
+  phone-call: icons/phone-call.svg
+  email: icons/email.svg
+  govuk-page: icons/govuk-page.svg
+  online-form: icons/online-form.svg
+  postbox: icons/postbox.svg
+  paddock: icons/paddock.svg
+  farm: icons/farm.svg
+  deer-park: icons/deer-park.svg
+  stock-trailer: icons/stock-trailer.svg
+  holding-register: icons/holding-register.svg
+  ear-tag: icons/ear-tag.svg
+  cross-cutting-team: icons/cross-cutting-team.svg
+  eu-commission: icons/eu-commission.svg
+  vendor: icons/vendor.svg
+  lawyers: icons/lawyers.svg
+  design-authority: icons/design-authority.svg
+  rpid-scotland: icons/rpid-scotland.svg
+  li-ltd: icons/li-ltd.svg
+  service-frozen: icons/service-frozen.svg
+
+stroke:
+  roughness: 1.2
+  strokeWidth: 2
+  bowing: 1
+  color: "#1e1e1e"
+
+font:
+  size: 20
+  lineHeight: 1.25
+  charWidth: 0.62
+
+wrap: 14
+angle: 1.5
+padding: { min: 0.5, max: 1.0 }
+actorSize: 96        # sprites carry more detail than a stroked icon, so draw them larger
+
+density:
+  tight:  { clusterGap: 16, turnGap: 10 }
+  medium: { clusterGap: 26, turnGap: 14 }
+  loose:  { clusterGap: 40, turnGap: 20 }

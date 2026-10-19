@@ -1,0 +1,5 @@
+template: lego
+seed: 113
+canvas: { width: 2200, ratio: "4:3" }
+density: tight
+wrap: 14

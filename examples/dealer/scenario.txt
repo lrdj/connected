@@ -1,0 +1,126 @@
+# Example copied from the proto-bovine repo (conversation-maps/dealer) on 19 Oct 2026.
+# A real map from a Defra programme, kept here to show the tool at scale:
+#   - a protagonist declared `once` in groups of two or three threads, so one person is
+#     seen pulled into several conversations while institutions repeat per thread
+#   - the `lego` sprite template (templates/lego), with `?name` placeholders that resolve
+#     to sprites and fall back to dashed boxes if a sprite is missing
+#   - a thread-comment convention: status (CURRENT, PROPOSED, ASSUMED, CONTESTED), the
+#     assumption IDs it rests on (A-numbers from that project's register), and "Asked:"
+#     naming who has been consulted. The "Asked" line is the persuasive layer.
+# Names of individuals and suppliers have been generalised; the A-numbers are left as they
+# were and mean nothing outside the source project.
+#
+# Day 1 for a livestock dealer: the conversations one operator has to have.
+# Drafted 14 Oct 2026 for the cross-cutting show and tell. Fourth operator map. The dealer
+# is the one genuinely new registration category for every species (A012), and the one
+# operator GB has never registered: no land, no CPH, no record, no count.
+# Persona: buys and sells cattle, sheep and the odd pig from a trailer and a phone; twenty
+# years in the trade; no premises of their own.
+
+@dealer     ?livestock-dealer:tall once
+@dealer2    ?livestock-dealer:tall once
+@dealer3    ?livestock-dealer:tall once
+@dealer4    ?livestock-dealer:tall
+@trailer    ?stock-trailer:wide        Empty trailer
+@market     ?livestock-market:wide     Market
+@farmer     ?cattle-keeper:tall
+@govuk      ?govuk-page                    GOV.UK
+@rpa        ?rpa-desk:wide                   RPA
+@apha       ?apha-desk:wide                   APHA
+@apha_b    ?apha-single-desk:wide          APHA
+@apha_c    ?back-office:tall               APHA
+@sam        service                    SAM
+@lis        service                    LIS
+@policy     ?policy-desk:wide          Policy
+@register   ?holding-register          Holding register
+
+# ---- Act 1: the letter that cannot be sent ----
+
+# 1. The landing page. PROPOSED. Part 3 GOV.UK: a landing page for the dealer registration
+# that needs a content owner. There is no letter because nobody knows who to write to.
+# Asked: nobody owns the page yet.
+govuk: Dealers must register from Day 1
+dealer: Twenty years buying and selling. Register where?
+govuk: A second landing page. It needs a content owner             #landing
+dealer: A what?
+
+# ---- Act 2: registration ----
+
+# 2. Who counts. ASSUMED. A013 OPEN (the definition of an assembly operator); A008 (policy
+# confirms the open definitions in time, open in every pack). Asked: policy, since August.
+dealer2: My cousin sells on ten calves a year. Is he one of us?
+policy: The definition is with us
+dealer2: Since when?
+policy: Every pack. No date
+
+# 3. How many. CURRENT. Station key: GB never registered dealers as a Member State, a CPH
+# cannot be issued without land, nobody knows how many dealers there are. Asked: everyone.
+apha: How many dealers are there?
+sam: I've never held one
+rpa: Nor me. No land, no record
+!apha: So nobody knows                                              #nobody-knows
+
+# 4. The number. ASSUMED. A017 OPEN (a non-CPH identifier); Part 3: contested between a
+# non-CPH number and reuse of the CPH range already used for markets. Gap tiles EN-07 and
+# EN-08. Asked: policy and architects. No dealer.
+dealer2: I've no land. Just a trailer and a phone
+rpa: A CPH needs an address. I can't give you one
+apha_b: Then not a CPH. A number we haven't named yet
+market: Or one of mine. Markets have CPHs without stock
+
+# 5. The form. PROPOSED. Part 3 CPH front doors: the dealer registration is the same CPH
+# journey reached through a second GOV.UK landing page, because dealers do not fit the
+# CPH content. Asked: the CPH team. No dealer has seen the form.
+dealer: Fine. Which form?
+apha_c: The CPH form, from the second landing page                    #form
+dealer: The one that asks for my land?
+apha_c: Leave that bit blank
+
+# 6. The pathfinder. ASSUMED. A114 OPEN (bovine is the pathfinder; its assembly operator
+# approach is reused by every species; the bovine journey is not written down in any pack).
+# Asked: bovine, which closes around 16 Oct.
+sam: Bovine is the pattern for every species
+apha: Where is the bovine dealer journey written down?
+sam: It isn't
+
+# 7. The allocator. ASSUMED. A016 OPEN (SAM can store the dealer record); Part 3: APHA is
+# the expected allocator in SAM once ownership is confirmed. A115: dealer registration is
+# one of only two new builds. Asked: architects. Not the people who would key it.
+apha_b: I'll issue the number, in SAM
+sam: Can I hold a thing with no address?
+apha_b: We think so. Nobody has tried
+
+# ---- Act 4: record keeping ----
+
+# 8. The records. ASSUMED. Station key: dealers must keep records of every animal they
+# handle. A021 (the gap closes with a minimal addition to the holding-register template;
+# field list confirmed Aug 2026, template change untested). Asked: policy. No dealer.
+dealer3: I'm to record every animal I handle
+register: A few extra columns on the holding register
+dealer3: I've no holding. Whose register?
+apha_c: Yours. That bit's untested
+
+# ---- Act 5: monitoring ----
+
+# 9. The moves. CONTESTED. Part 3 CTS: a board card puts dealer movement reporting onto
+# CTS and LIS, which the law does not require. The law puts reporting on the keeper.
+# Asked: the board. Not a dealer, not a farmer.
+dealer3: Do I report the move, or the farmer?
+lis: A board card says you do, on me and CTS
+farmer: The law says I do, as the keeper
+dealer3: So, both of us?
+
+# ---- The gap, and the hope ----
+
+# 10. The dealer nobody asked. THE UCD GAP. A012 is the only CONFIRMED row in this map,
+# and it confirms the category exists. Asked: law, policy, architects, the board. No
+# dealer has been interviewed. The last line is the hope.
+dealer4: Has anyone asked a dealer?
+policy: We've asked the law what a dealer is
+dealer4: Ask me. I'll tell you in a sentence
+apha: No dealer has been interviewed
+dealer4: I'd register tomorrow if there were a form                  #ask-me
+
+~ landing form
+# (a second link, nobody-knows ~ ask-me, was dropped on 14 Oct: the packer puts the burst beside the
+# gap thread without it, and with it the line ran through the middle of the page)

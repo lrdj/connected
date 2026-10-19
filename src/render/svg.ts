@@ -4,7 +4,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { ROOT } from "../load.js";
+import { ROOT, iconSvg } from "../load.js";
 import roughModule from "roughjs";
 import type { Drawable, Options } from "roughjs/bin/core.js";
 import type { RoughGenerator } from "roughjs/bin/generator.js";
@@ -80,9 +80,9 @@ export function renderSvg(sketch: Sketch, ctx: RenderContext): string {
   }
 
   for (const a of sketch.actors) {
-    const svgPath = ctx.icons[a.icon]?.file;
-    if (!svgPath) throw new Error(`No icon "${a.icon}" in template (actor ${a.actorId})`);
-    const data = Buffer.from(fs.readFileSync(svgPath, "utf8"), "utf8").toString("base64");
+    const icon = ctx.icons[a.icon];
+    if (!icon) throw new Error(`No icon "${a.icon}" in template (actor ${a.actorId})`);
+    const data = Buffer.from(iconSvg(icon), "utf8").toString("base64");
     parts.push(`<image href="data:image/svg+xml;base64,${data}" x="${a.box.x}" y="${a.box.y}" width="${a.box.w}" height="${a.box.h}"/>`);
     if (a.caption) {
       parts.push(`<text class="label caption" text-anchor="middle" x="${a.box.x + a.box.w / 2}" y="${a.box.y + a.box.h + style.fontSize * 0.9}">${esc(a.caption.toUpperCase())}</text>`);

@@ -4,7 +4,7 @@
  * repo (October 2026): bindings are { elementId, fixedPoint, mode }, text binds
  * through containerId, images reference `files` by fileId.
  */
-import fs from "node:fs";
+import { iconSvg } from "../load.js";
 import { bbox, burstOutline, ratioOf } from "../geometry.js";
 import { elementId, fnv1a, rngFor, seedFor } from "../rng.js";
 import type { Box, Pt, RenderContext, Sketch, SketchBubble, SketchLink } from "../types.js";
@@ -119,9 +119,9 @@ function buildBubble(b: SketchBubble, ctx: RenderContext, out: Built): void {
 }
 
 function buildActor(a: Sketch["actors"][number], ctx: RenderContext, out: Built): void {
-  const svgPath = ctx.icons[a.icon]?.file;
-  if (!svgPath) throw new Error(`No icon "${a.icon}" in template (actor ${a.actorId})`);
-  const svg = fs.readFileSync(svgPath, "utf8");
+  const icon = ctx.icons[a.icon];
+  if (!icon) throw new Error(`No icon "${a.icon}" in template (actor ${a.actorId})`);
+  const svg = iconSvg(icon);
   const fileId = `icon-${a.icon}-${fnv1a(svg).toString(16)}`;
   if (!out.files[fileId]) {
     out.files[fileId] = {

@@ -10,6 +10,7 @@ import { layoutScenario } from "./layout.js";
 import { applyHints, loadHints, pinFromFile, saveHints } from "./hints.js";
 import { measureBubble } from "./measure.js";
 import { rngFor } from "./rng.js";
+import { describePlaceholders, resolvePlaceholders, writePlaceholders } from "./placeholder.js";
 import type { Sketch, RenderContext } from "./types.js";
 
 async function writeOutputs(sketch: Sketch, ctx: RenderContext, name: string, png: boolean): Promise<void> {
@@ -28,11 +29,16 @@ async function writeOutputs(sketch: Sketch, ctx: RenderContext, name: string, pn
   }
 }
 
-function readScenario(dir: string) {
+function readScenario(dir: string, ctx: RenderContext) {
   const file = path.join(path.resolve(dir), "scenario.txt");
   if (!fs.existsSync(file)) throw new Error(`Missing file: ${file}`);
   try {
-    return parseScenario(fs.readFileSync(file, "utf8"));
+    const scenario = parseScenario(fs.readFileSync(file, "utf8"));
+    const placeholders = resolvePlaceholders(scenario.actors, ctx);
+    for (const a of scenario.actors) {
+      if (!ctx.icons[a.icon]) throw new Error(`actor "${a.id}" uses icon "${a.icon}", which template "${ctx.name}" does not have (write ?${a.icon} for a placeholder)`);
+    }
+    return { scenario, placeholders };
   } catch (err) {
     throw new Error(`${path.relative(process.cwd(), file)}: ${err instanceof Error ? err.message : String(err)}`);
   }
@@ -53,18 +59,23 @@ async function main(argv: string[]): Promise<void> {
     case "build": {
       if (!dir) throw new Error("usage: build <example dir>");
       const ctx = loadContext(dir);
-      const scenario = readScenario(dir);
+      const { scenario, placeholders } = readScenario(dir, ctx);
       const { sketch, warnings } = layoutScenario(scenario, ctx);
       applyHints(sketch, loadHints(dir), ctx, warnings);
       for (const w of warnings) console.warn(`warning: ${w.message}`);
       await writeOutputs(sketch, ctx, ctx.name, png);
+      if (placeholders.length) {
+        const files = writePlaceholders(placeholders, path.join(ROOT, "out", "placeholders"));
+        console.log(`placeholder icons still to draw: ${describePlaceholders(placeholders)}`);
+        console.log(`wrote ${files.length} placeholder SVG${files.length === 1 ? "" : "s"} to ${path.relative(process.cwd(), path.join(ROOT, "out", "placeholders"))}/`);
+      }
       return;
     }
     case "pin": {
       // Record hand edits from an Excalidraw file into hints.yml.
       if (!dir) throw new Error("usage: pin <example dir> [edited.excalidraw]");
       const ctx = loadContext(dir);
-      const scenario = readScenario(dir);
+      const { scenario } = readScenario(dir, ctx);
       const file = argv.filter((a) => !a.startsWith("--"))[2] ?? path.join(ROOT, "out", `${ctx.name}.excalidraw`);
       if (!fs.existsSync(file)) throw new Error(`Missing file: ${file}`);
       const existing = loadHints(dir);
@@ -79,16 +90,14 @@ async function main(argv: string[]): Promise<void> {
     case "check": {
       if (!dir) throw new Error("usage: check <example dir>");
       const ctx = loadContext(dir);
-      const scenario = readScenario(dir);
+      const { scenario, placeholders } = readScenario(dir, ctx);
       const turns = scenario.threads.flatMap((t) => t.turns);
-      for (const a of scenario.actors) {
-        if (!ctx.icons[a.icon]) throw new Error(`actor "${a.id}" uses icon "${a.icon}", which template "${ctx.name}" does not have`);
-      }
       const lines = turns.map((t) => measureBubble(t.text, ctx.style, rngFor(ctx.seed, t.handle), t.burst).lines.length);
       const { sketch, warnings } = layoutScenario(scenario, ctx);
       applyHints(sketch, loadHints(dir), ctx, warnings);
       console.log(`${ctx.name}: ${scenario.threads.length} threads, ${turns.length} bubbles (${turns.filter((t) => t.burst).length} bursts), ${scenario.actors.length} actors, ${scenario.links.length} cross-thread links`);
       console.log(`lines per bubble: min ${Math.min(...lines)}, max ${Math.max(...lines)}, mean ${(lines.reduce((a, b) => a + b, 0) / lines.length).toFixed(1)}`);
+      if (placeholders.length) console.log(`placeholder icons still to draw: ${describePlaceholders(placeholders)}`);
       for (const w of warnings) console.log(`warning: ${w.message}`);
       return;
     }

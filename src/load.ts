@@ -102,6 +102,13 @@ function svgSize(file: string, name: string): { w: number; h: number } {
   throw new Error(`Icon "${name}": cannot read a size from ${file} (no viewBox or width/height)`);
 }
 
+/** The SVG source of an icon, from its file or inline for a placeholder. */
+export function iconSvg(icon: IconInfo): string {
+  if (icon.svg !== undefined) return icon.svg;
+  if (icon.file) return fs.readFileSync(icon.file, "utf8");
+  throw new Error("Icon has neither a file nor inline SVG");
+}
+
 /** The drawn size of an icon on the canvas. */
 export function iconBox(icon: IconInfo, style: Style): { w: number; h: number } {
   const scale = style.iconScale ?? style.actorSize / icon.h;

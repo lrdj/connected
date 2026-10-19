@@ -36,7 +36,8 @@ Lines are processed top to bottom. Blank lines separate threads. Whitespace with
 ```
 
 - `id`: letters, digits, `_`, `-`. Must be unique. Used as the speaker name in turns.
-- `icon`: a name from the template's `icons:` list. Unknown icons fail at `check`.
+- `icon`: a name from the template's `icons:` list, or a placeholder `?name`. Unknown icons without the `?` fail at `check`.
+- placeholder: `?name`, `?name:tall` or `?name:wide`. Drawn as a dashed box with the name in it (hyphens become spaces) until a real icon exists. If the template has an icon called `name`, `?name` uses it and the placeholder is skipped, so the scenario need not change when the drawing arrives. `tall` is narrow like a person, `wide` is like a building or vehicle, the default is square. `check` and `build` list the placeholders still to draw, and `build` writes each one to `out/placeholders/` at its natural proportions.
 - `once`: optional. The actor is drawn a single time for the whole map, and every thread it speaks in attaches to that one icon.
 - caption: optional, the rest of the line. Drawn under the icon in small capitals. Use for buildings and services, not for people.
 
@@ -93,7 +94,7 @@ Actor instances are `actor.t<thread>.<id>`, or `actor.<id>` for a `once` actor. 
 `check` and `build` stop on the first problem and print the line number and the line. The messages say what to do:
 
 - unknown speaker or node: declare it
-- unknown icon: use one from the template
+- unknown icon: use one from the template, or write `?name` for a placeholder
 - reply to an unknown handle: name an earlier bubble with `#`
 - handle used twice
 - actor declared inside a thread: move it above

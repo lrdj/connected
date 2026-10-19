@@ -1,0 +1,51 @@
+# A demonstration of placeholder icons. The story is a meat consignment leaving
+# the country: the abattoir, the vet who signs the certificate, the border
+# control post that checks it, and the people in Whitehall who set the rules.
+# Icons marked ?name do not exist in the template yet. They are drawn as
+# labelled dashed boxes until someone draws them and adds them to template.yml.
+
+@worker     ?abattoir-worker:tall
+@vet        ?vet:tall
+@abattoir   ?abattoir:wide              Abattoir
+@bcp        ?border-control-post:wide   Border control post
+@cabinet    ?cabinet-office:wide        Cabinet Office
+@exporter   person
+@ipaffs     service                     IPAFFS
+@haulier    person
+@lorry      ?lorry:wide
+
+# At the abattoir
+worker: Forty lamb carcasses, chilled and tagged
+vet: Let me see the kill sheet
+worker: Here, with the ear tags
+vet: Fine, I'll sign the health certificate       #cert
+
+# Getting the paperwork in
+exporter: Certificate's signed, when do we book?
+ipaffs: Tell me what's travelling and where to
+exporter@abattoir: Lamb, forty, to Calais on Thursday
+ipaffs: Booked, reference ready                   #ref
+
+# On the road
+haulier: Got the reference?
+lorry: It's on the dashboard
+haulier: Then off we go
+
+# At the border
+bcp: Papers please                                 < ref
+haulier: Here's the reference and the certificate
+bcp: Seal matches, temperature's fine
+bcp: Through you go                                #through
+
+# The one that doesn't
+!bcp: STOP! The certificate's dated wrong
+haulier: What do I do with forty lambs?
+bcp: Ring your vet, I can hold it an hour
+
+# Whitehall
+cabinet: How many lorries were held last week?
+bcp: Eleven, nine for paperwork
+cabinet: Then the form is the problem, not the lorries
+vet@cabinet: Let us sign it on a screen            < cert
+
+~ through ref

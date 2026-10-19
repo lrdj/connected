@@ -2,6 +2,7 @@
  * Parser for scenario.txt.
  *
  *   @id icon [once] [caption]   declare an actor; `once` draws it a single time for all threads
+ *                                `?name` (or `?name:tall`, `?name:wide`) is a placeholder for an icon not drawn yet
  *   speaker: words              a turn; a blank line ends the thread
  *   speaker@node: words         the speaker's words, attached to another actor's icon
  *   !speaker: words             a burst
@@ -18,7 +19,7 @@ export class ParseError extends Error {
   }
 }
 
-const ACTOR = /^@([A-Za-z0-9_-]+)\s+([A-Za-z0-9_-]+)(?:\s+(once)\b)?(?:\s+(.+?))?\s*$/;
+const ACTOR = /^@([A-Za-z0-9_-]+)\s+(\??[A-Za-z0-9_-]+(?::[a-z]+)?)(?:\s+(once)\b)?(?:\s+(.+?))?\s*$/;
 const TURN = /^(!?)([A-Za-z0-9_-]+)(?:@([A-Za-z0-9_-]+))?:\s*(.*?)\s*$/;
 const HANDLE = /\s+#([A-Za-z0-9_-]+)\s*$/;
 const REPLY = /\s+<((?:\s+[A-Za-z0-9_.-]+)+)\s*$/;

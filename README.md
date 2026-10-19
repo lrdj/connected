@@ -4,7 +4,7 @@ Hand-drawn conversation sketches, generated from a screenplay-style text file. A
 
 The main output is an Excalidraw file for hand finishing. A Rough.js SVG is the secondary output. See `BRIEF-v2.md` for the design.
 
-Turning an existing diagram into one of these, by hand or with an AI agent? Start with `docs/conversation-maps.md`. The file format is in `docs/scenario-format.md`.
+Turning an existing diagram, a brief or a list of conversations into one of these, by hand or with an AI agent? Start with `docs/conversation-maps.md`. The file format is in `docs/scenario-format.md`.
 
 ## Status
 
@@ -38,7 +38,7 @@ citizen: Where do I start?
 phone: Have you got photo ID?
 ```
 
-Each `@` line declares an actor with an icon from the template and an optional caption. A blank line separates threads. `!` before a speaker makes a burst. `#handle` at the end of a line names a bubble, and `~ a b` links two named bubbles across threads. Lines starting with `#` are comments.
+Each `@` line declares an actor with an icon from the template and an optional caption. An icon that is not drawn yet can be a placeholder, `?vet:tall` or `?border-control-post:wide`, drawn as a labelled dashed box; `build` lists the placeholders left to draw and writes them to `out/placeholders/`. A blank line separates threads. `!` before a speaker makes a burst. `#handle` at the end of a line names a bubble, and `~ a b` links two named bubbles across threads. Lines starting with `#` are comments.
 
 An actor is drawn once per thread it speaks in, next to its first turn there, which is how the reference drawing works too. Three markers refine that:
 
@@ -86,7 +86,7 @@ src/            pipeline: parse, load, measure, geometry, layout, hints, render/
 docs/           guide for turning other diagrams into conversation maps, and the file format reference
 fixtures/       hand-placed sketch used to tune the look
 templates/      icon sets and stroke settings: govuk-services (placeholders), connected-car (the reference's drawings)
-examples/       scenario.txt + config.yml (+ hints.yml) per map: govid-tax, connected-car, clinic-appointment
+examples/       scenario.txt + config.yml (+ hints.yml) per map: govid-tax, connected-car, clinic-appointment, meat-export (placeholder icons)
 fonts/          Excalifont, SIL OFL, embedded in the SVG output
 out/            generated files, not committed
 ```

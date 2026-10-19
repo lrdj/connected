@@ -28,10 +28,15 @@ export interface Style {
 }
 
 export interface IconInfo {
-  file: string;
+  /** SVG file in the template. Absent for a generated placeholder. */
+  file?: string;
+  /** Inline SVG source, used instead of `file` for generated placeholders. */
+  svg?: string;
   /** Natural size from the SVG viewBox (or width/height attributes). */
   w: number;
   h: number;
+  /** True when this is a generated placeholder rather than a drawing. */
+  placeholder?: boolean;
 }
 
 export interface ActorDecl {

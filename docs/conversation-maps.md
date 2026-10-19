@@ -1,6 +1,6 @@
 # Making conversation maps from other diagrams
 
-A guide for people and for AI agents (Claude, Codex, or any other) that have a systems diagram, a process flow, an ecosystem map or a service blueprint and need to turn it into a **conversation map** using this tool.
+A guide for people and for AI agents (Claude, Codex, or any other) that have a systems diagram, a process flow, an ecosystem map, a service blueprint, a written brief or a list of conversations and need to turn it into a **conversation map** using this tool. Icons for a new domain usually do not exist yet; section 7 explains how to build the map without them.
 
 Read this whole file before writing a scenario. The format reference is in `scenario-format.md`. The commands are at the end.
 
@@ -33,7 +33,7 @@ The job is the same whatever you start from: find the actors, find the exchanges
 Boxes are components; arrows are calls or data flows, usually labelled with a noun.
 
 - **Components become actors**, but only those with a voice. A payment service, a mobile app, a customer, a branch and a partner API all speak. A load balancer, a queue or a database usually does not, so leave it out unless it says something a reader needs ("I'm the system of record for addresses").
-- **Choose an icon kind** for each: `person` for humans, `phone` for apps and devices, `building` for places and organisations, `service` for systems and APIs. Templates may have more.
+- **Choose an icon kind** for each: `person` for humans, `phone` for apps and devices, `building` for places and organisations, `service` for systems and APIs. Templates may have more. Where none fits, use a placeholder (`?name`, see `scenario-format.md`) rather than the nearest wrong thing.
 - **Each labelled arrow becomes a turn**, spoken by the arrow's source, in words rather than nouns. `GET /eligibility` becomes `Am I eligible?`. `Eligibility response` becomes `Yes, as of today`.
 - **Group arrows into threads by exchange.** A request and its response are one thread. A chain of three calls that serve one user action are one thread. Do not make one thread per component.
 - **Hubs.** A component with arrows to everything is a hub. Declare it `once` only if three or fewer threads pass through it; otherwise let it be drawn in each thread, which the reader accepts without noticing.
@@ -77,6 +77,15 @@ Rows: customer actions, frontstage, backstage, support processes. Columns: stage
 - **Physical evidence** rarely needs drawing. If a letter matters, let someone talk about it: `branch: Bring the letter and your passport`.
 - **Time and metrics** have no place on the map. Put them in the words if they matter: `branch: Nearest branch: 0.4 miles`.
 
+### 3.5 A brief, a prompt or a list of conversations
+
+Sometimes there is no diagram, only a description of the domain or a list of the conversations the map should contain.
+
+- **A list of conversations is already the plan.** Each item becomes one thread. Name the two or three actors in it, write its two to five turns, and move on. Do not merge items or add ones that were not asked for; if the list has more than fourteen, say so and propose a split into two maps.
+- **A prose brief needs the actors found first.** List every person, place, device, organisation and system the brief names or implies. Then list the exchanges between them that carry the story, pick ten or so, and write each as a thread. Put the actor list and the chosen exchanges in a comment at the top of `scenario.txt` so the person can see what was chosen and what was dropped.
+- **Several maps from one brief** go in separate directories under `examples/`, one `scenario.txt` each, with a comment naming which part of the brief each covers.
+- **Most actors will need new icons.** A brief about meat exports has no `phone`-shaped actor; it has vets, lorries and border control posts. Declare them with placeholders as described in section 7 and keep going. Icons come later and are not your job.
+
 ## 4. Writing the words
 
 The map works or fails on the words, so spend most of the effort here.
@@ -108,20 +117,43 @@ A map with more content than this should become two maps.
 
 ## 6. Procedure for an agent
 
-1. Read the source diagram and list its actors. Decide an icon kind for each and which template to use (`govuk-services` has `person`, `phone`, `building`, `service`; others are listed in `templates/`). If an icon kind is missing, use the nearest and say so in a comment at the top of the file.
+1. Read the source diagram and list its actors. Decide an icon kind for each and which template to use (`govuk-services` has `person`, `phone`, `building`, `service`; others are listed in `templates/`). If the right icon does not exist, declare the actor with a placeholder: `?abattoir-worker:tall`, `?border-control-post:wide`, `?vet:tall`. The map still builds, with a labelled dashed box where the drawing will go, and `build` lists what is left to draw. Do not substitute a wrong icon just because it exists.
 2. List the exchanges that carry the story. Drop the rest. Write each exchange as a thread in the actors' voices.
 3. Write `scenario.txt` and `config.yml` in a new directory under `examples/`, or wherever the host repo keeps them. A comment line at the top should name the source document.
 4. Run `check`. Fix any parse error it reports; it quotes the line. Compare the counts with the table above.
 5. Run `build --png` and look at the PNG. Then read the warnings. A warning that a link passes through a box is not an error; it tells a person what to fix by hand. If there are more than three such warnings, the map is too connected: remove links or split hubs.
-6. Say in your reply which exchanges from the source you left out and why, and which warnings remain for hand finishing.
+6. Say in your reply which exchanges from the source you left out and why, which warnings remain for hand finishing, and which placeholder icons are still to draw (copy the line `build` prints).
 
 Do not try to reproduce the source diagram's layout or completeness. Do not add arrowheads, titles, legends or colours. Do not invent a layout engine; the tool has one.
 
-## 7. Worked example
+## 7. Before the icons exist: placeholders
+
+Templates hold only a few icons, and a new domain needs new ones. Do not wait for them and do not pick the nearest wrong icon. Declare the actor with a placeholder and build the map anyway:
+
+```
+@vet        ?vet:tall
+@abattoir   ?abattoir:wide               Abattoir
+@bcp        ?border-control-post:wide    Border control post
+@cabinet    ?cabinet-office:wide         Cabinet Office
+@ipaffs     service                      IPAFFS
+```
+
+- **The name after `?`** is the icon that will one day be drawn. Use lower case with hyphens; it is drawn in the box with the hyphens turned into spaces. Choose a name for the drawing, not the role in this map: `?vet`, not `?signing-vet`.
+- **The shape hint** tells the layout how much room to leave. `:tall` for a person or anything upright, `:wide` for a building, vehicle, counter or desk, nothing for something roughly square (a device, a document, a sign). The real icons will not all be the same size, and that is fine; the hint only has to be roughly right.
+- **Captions still apply.** A building placeholder with a caption shows the name twice, once in the box and once under it. That is expected: the caption is what will remain when the drawing replaces the box.
+- **Reuse names across maps.** If two scenarios both need a vet, both write `?vet`, so one drawing serves both.
+- **`check` and `build` list the placeholders** in use. `build` also writes each one to `out/placeholders/<name>.svg` at its natural proportions, as a tracing guide.
+- **In your reply, list the placeholders** with one line each saying what the drawing should show, for example: `border-control-post (wide): a checkpoint hut with a barrier`. The person draws them from that list.
+
+What happens afterwards, for the person rather than the agent: draw each icon as a plain stroked SVG, put it in the template's `icons/` folder, and list it in `template.yml` under the same name as the placeholder. On the next build, `?vet` finds `vet` in the template and uses the drawing. The scenario does not change.
+
+## 8. Worked example
+
+`examples/meat-export/` shows placeholder icons: six actors declared with `?name`, built before any of their drawings exist.
 
 `examples/clinic-appointment/` was made from a four-column service blueprint for booking a clinic appointment (columns: find a slot, confirm identity, attend, follow up; rows: patient, app, receptionist, booking system, records). Read its `scenario.txt` to see every rule above applied, including a fork at the identity question, a `speaker@node` turn where the records system speaks through the app, and one burst.
 
-## 8. Commands
+## 9. Commands
 
 ```
 npm install
@@ -132,6 +164,6 @@ node --import tsx src/cli.ts pin examples/<name>            # after hand edits, 
 
 Outputs go in `out/`. The `.excalidraw` file opens at excalidraw.com or in the VS Code Excalidraw extension. The `.svg` embeds its font and needs nothing else.
 
-## 9. Templates
+## 10. Templates
 
-A template is a directory under `templates/` with `template.yml` and an `icons/` folder of SVGs. To add one for a new domain, copy `govuk-services`, replace the SVGs, and list them under `icons:` in the YAML. Keep icons as plain stroked drawings. If the icons are drawn at a consistent scale, set `iconScale` so their relative sizes survive; otherwise they are fitted to `actorSize`. Config can override any template value.
+A template is a directory under `templates/` with `template.yml` and an `icons/` folder of SVGs. To add one for a new domain, copy `govuk-services`, replace the SVGs, and list them under `icons:` in the YAML. The usual order is: write the scenario with `?name` placeholders, judge the conversations, then draw the icons, drop them into `icons/`, and list each under the same `name`. The placeholders resolve to the drawings on the next build. Keep icons as plain stroked drawings. If the icons are drawn at a consistent scale, set `iconScale` so their relative sizes survive; otherwise they are fitted to `actorSize`. Config can override any template value.
